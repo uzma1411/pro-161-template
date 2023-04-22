@@ -7,7 +7,8 @@ AFRAME.registerComponent("bowling-balls", {
       if (e.key === "z") {
         var  ball = document.createElement("a-entity");
 
-        ball.setAttribute("gltf-model", "./models/bowling_ball/scene.gltf");
+        //set the attribute of the gltf-model to the ball
+
 
         ball.setAttribute("scale", { x: 3, y: 3,  z: 3});
 
@@ -21,18 +22,18 @@ AFRAME.registerComponent("bowling-balls", {
           z: pos.z,
         });
 
-        var camera = document.querySelector("#camera").object3D;
+        //create a camera variable
+
 
         //get the camera direction as Three.js Vector
-        var direction = new THREE.Vector3();
-        camera.getWorldDirection(direction);
 
         //set the velocity and it's direction
-        ball.setAttribute("velocity", direction.multiplyScalar(-10));
+       
 
-        var scene = document.querySelector("#scene");
+        //select the scene and append the ball entity to it
 
-        scene.appendChild(ball);
+      
+      
       }
     });
   },
